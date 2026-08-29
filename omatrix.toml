@@ -1,0 +1,54 @@
+# omatrix — live cmatrix wallpaper settings for this theme.
+#
+# The presence of this file is what switches the rain on: the omatrix shell
+# plugin watches the active theme directory and only renders while the theme
+# ships an omatrix.toml. Any theme can opt in by adding one. Every key here
+# mirrors a cmatrix flag; the plugin entry in ~/.config/omarchy/shell.json
+# can override any of them per machine.
+
+# -u delay (0 - 10). cmatrix sleeps delay * 10 ms between screen updates,
+# so 4 is the stock 25 Hz terminal cadence.
+update_delay = 4
+
+# -a: asynchronous scroll — columns advance in three different pacing classes.
+asynchronous = false
+
+# -n / -b / -B → "none", "partial", "all". With "partial" every glyph whose
+# character code is even is bold, plus all heads.
+bold = "none"
+
+# Glyph range: "ascii" (plain terminal, '!'..'z'), "katakana" (-c),
+# or "console" (-l, the mtx console font range).
+charset = "ascii"
+
+# -m: lambda mode. Every tail glyph is λ.
+lambda = false
+
+# -k: characters change while scrolling.
+changes = false
+
+# -o: old-style scrolling.
+oldstyle = false
+
+# -r: rainbow mode.
+rainbow = false
+
+# -C color: an ANSI name (green, red, blue, white, yellow, cyan, magenta,
+# black) resolved through the theme's colors.toml, or a #rrggbb literal.
+color = "green"
+
+# Heads are COLOR_WHITE in ncurses, which the terminal maps to `foreground`.
+# Set an ANSI name or #rrggbb literal to change it.
+head_color = "white"
+
+# Rain opacity and an optional black scrim between the rain and the wallpaper.
+opacity = 1.0
+backdrop_opacity = 0.0
+
+# Start with a screen full of rain instead of an empty terminal.
+prewarm = true
+
+# Font follows `omarchy font` and the shell's base size (the terminal's 9pt =
+# 12px). Uncomment to pin either.
+# font_family = "JetBrainsMono Nerd Font"
+# font_size = 12
