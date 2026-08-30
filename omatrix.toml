@@ -45,8 +45,19 @@ head_color = "white"
 opacity = 1.0
 backdrop_opacity = 0.0
 
-# Start with a screen full of rain instead of an empty terminal.
-prewarm = true
+# "wake": whenever the rain becomes visible (theme switch, unlock, a
+# fullscreen window closing) it starts as an empty terminal that fills up,
+# like launching cmatrix. "full": start mid-run.
+start = "wake"
+
+# Stop rendering when nobody can see it.
+pause_when_covered = true   # a fullscreen window is on that monitor
+pause_when_locked = true    # the session is locked
+
+# On battery: "slow" raises the update delay to battery_update_delay,
+# "pause" stops the rain, "ignore" keeps the mains settings.
+on_battery = "slow"
+battery_update_delay = 6
 
 # Font follows `omarchy font` and the shell's base size (the terminal's 9pt =
 # 12px). Uncomment to pin either.
